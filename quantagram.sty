@@ -1,0 +1,13 @@
+% Quantum circuit diagram rendering
+% We need the verbatim package to ignore the user's diagrams source.
+\usepackage{verbatim}
+% These are the packages we use to render the diagrams.
+\usepackage{tikz}
+\usetikzlibrary{backgrounds,fit,decorations.pathreplacing,calc}
+\newcounter{quantagramindex}
+\newcommand{\quantagramoptions}[1]{}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newenvironment{quantagram}%
+{\input{_quantagram_diagram\arabic{quantagramindex}}\expandafter\comment}%
+{\expandafter\endcomment\stepcounter{quantagramindex}}
+
