@@ -3,10 +3,14 @@
 \usepackage{verbatim}
 % These are the packages we use to render the diagrams.
 \usepackage{tikz}
-\usetikzlibrary{backgrounds,fit,decorations.pathreplacing,calc}
+\usetikzlibrary{fit,decorations.pathreplacing,calc}
+\pgfdeclarelayer{qg1} 
+\pgfdeclarelayer{qg2} 
+\pgfsetlayers{qg1,qg2,main}
 \newcounter{quantagramindex}
 \newcommand{\quantagramoptions}[1]{}
 \newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}}
 \newenvironment{quantagram}%
 {\input{_quantagram_diagram\arabic{quantagramindex}}\expandafter\comment}%
 {\expandafter\endcomment\stepcounter{quantagramindex}}
